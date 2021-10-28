@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 namespace Card_Deck
 {
     class Cards
-    {
-
-        List<Cards> cards = new List<Cards>();
-
-        private string cardColour;
+    {       
         private int _cardID;
         private string _question;
         private string _answer1;
@@ -19,7 +15,18 @@ namespace Card_Deck
         private string _answer3;
         private string _answer4;
 
-        public int cardID { get { return _cardID; } }
+        public int cardID
+        {
+            get
+            {
+                return _cardID;
+            }
+
+            set
+            {
+                _cardID = value;
+            }
+        }
         public string question { get { return _question; } }
         public string answer1 { get { return _answer1; } }
         public string answer2 { get { return _answer2; } }
@@ -35,11 +42,8 @@ namespace Card_Deck
             _answer3 = answer3;
             _answer4 = answer4;
         }
-               
-        public List<Cards> getCards()
-        {            
-            return cards;
-        }
+
+    
 
     }
 }

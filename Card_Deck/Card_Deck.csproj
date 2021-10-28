@@ -44,10 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cards.cs" />
+    <Compile Include="GreenCards.cs" />
+    <Compile Include="ID.cs" />
     <Compile Include="LoadCardData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
+    <Compile Include="RedCards.cs" />
     <Compile Include="SaveCardData.cs" />
   </ItemGroup>
   <ItemGroup>

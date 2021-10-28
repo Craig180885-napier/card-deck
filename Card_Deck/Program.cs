@@ -11,13 +11,24 @@ namespace Card_Deck
         
 
         static void Main(string[] args)
-        {           
+        {
+            Query query = new Query();
 
-            RandomNumberGenerator rng = new RandomNumberGenerator(100);
-            LoadCardData lcd = new LoadCardData();
+            // Shows how many Cards are in the deck
+            Console.WriteLine("Green Card is has " + query.getGreenCards().Capacity + " Cards in it");
 
-            // iterates through the list created by loading the CSV data 
-            foreach(Cards c in lcd.loadAllGreenCardsFromFile().ToList())
+            // Instantiaes the Random Number generator and sets the range to the number of cards in the deck
+            RandomNumberGenerator rng = new RandomNumberGenerator(query.getGreenCards().Capacity);
+
+            // Writes the random number to the Console
+            Console.WriteLine(rng.getRandomNumber);
+
+            // Creates a list to hold the green card with the ID that matches the random number that was generated
+            List<GreenCards> specificGreenCard = query.getSpecificGreenCard(rng.getRandomNumber);
+
+            
+            // iterates through the list created by loading the CSV data - TODO - Must be a better way to do this
+            foreach (GreenCards c in specificGreenCard)
             {
                 
                 Console.WriteLine("Card ID : "  + c.cardID + "\n" + 
@@ -48,22 +59,13 @@ namespace Card_Deck
                     case 4:
                         Console.WriteLine("Case 4 : 40 moneyz, if there were more like you we wouldn't be in this mess xoxo");
                         Console.ReadLine();
-                        break;
+                        break;    
                     default:
                         Console.WriteLine("Default : That is not a valid answer eco friend, enter 1-4");
                         Console.ReadLine();
                         break;
                 }
-            }
-
-            // displays the card number
-            Console.WriteLine("Card ID : " + rng.getRandomNumber);
-            Console.ReadLine();
-
-         
-
+            }          
         }
-
-       
     }
 }

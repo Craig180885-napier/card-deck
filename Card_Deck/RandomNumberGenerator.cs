@@ -16,7 +16,7 @@ namespace Card_Deck
             // Randomw number code below was sourced from https://stackoverflow.com/questions/3975290/produce-a-random-number-in-a-range-using-c-sharp
 
             Random r = new Random();
-            _randomNumber = r.Next(0, range);            
+            _randomNumber = r.Next(1, range);            
         }
 
         public int getRandomNumber
