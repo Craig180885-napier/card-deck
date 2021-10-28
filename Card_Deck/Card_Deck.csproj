@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GreenCardResponses.cs" />
+    <Compile Include="Response.cs" />
     <Compile Include="Cards.cs" />
     <Compile Include="GreenCards.cs" />
     <Compile Include="ID.cs" />

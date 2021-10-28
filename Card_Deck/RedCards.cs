@@ -15,5 +15,12 @@ namespace Card_Deck
             _cardColour = "Red";
         }
 
+        public string cardColour
+        {
+            get
+            {
+                return _cardColour;
+            }
+        }
     }
 }

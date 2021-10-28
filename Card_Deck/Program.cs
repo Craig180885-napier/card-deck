@@ -26,46 +26,62 @@ namespace Card_Deck
             // Creates a list to hold the green card with the ID that matches the random number that was generated
             List<GreenCards> specificGreenCard = query.getSpecificGreenCard(rng.getRandomNumber);
 
-            
+
             // iterates through the list created by loading the CSV data - TODO - Must be a better way to do this
             foreach (GreenCards c in specificGreenCard)
             {
-                
-                Console.WriteLine("Card ID : "  + c.cardID + "\n" + 
+
+                Console.WriteLine("Card ID : " + c.cardID + "\n" +
                                   "Question : " + c.question + "\n" +
                                   "answer1 : " + c.answer1 + "\n" +
                                   "answer2 : " + c.answer2 + "\n" +
                                   "answer3 : " + c.answer3 + "\n" +
                                   "answer4 : " + c.answer4 + "\n");
                 Console.ReadLine();
+
+            }
                 Console.WriteLine("Select and answer between 1 and 4 and press enter");
                 int answer = int.Parse(Console.ReadLine());
 
-                // displays an message depending on the users input
+            List<GreenCardResponses> specificGreenCardResponse = query.getSpecificGreenCardResponse(rng.getRandomNumber);
+
+            foreach (GreenCardResponses r in specificGreenCardResponse)
+            {
+                Console.WriteLine("Response ID : " + r.responseID + "\n" +
+                                "Card Colour : " + r.cardColour + "\n" +
+                                "response1 : " + r.response1 + "\n" +
+                                "response2 : " + r.response2 + "\n" +
+                                "response3 : " + r.response3 + "\n" +
+                                "response4 : " + r.response4 + "\n");
+                Console.ReadLine();
+
                 switch (answer)
-                { 
+                {
                     case 1:
-                        Console.WriteLine("Case 1 : No points for you lazy pants");
+                        Console.WriteLine("Response 1 : " + r.response1);
                         Console.ReadLine();
                         break;
                     case 2:
-                        Console.WriteLine("Case 2 : 5 moneyz, please use it to buy more underwear");
+                        Console.WriteLine("Response 2 : " + r.response2);
                         Console.ReadLine();
                         break;
                     case 3:
-                        Console.WriteLine("Case 3 : 20 moneyz, you are at least doing something");
+                        Console.WriteLine("Response 3 : " + r.response3);
                         Console.ReadLine();
                         break;
                     case 4:
-                        Console.WriteLine("Case 4 : 40 moneyz, if there were more like you we wouldn't be in this mess xoxo");
+                        Console.WriteLine("Response 4 : " + r.response4);
                         Console.ReadLine();
-                        break;    
+                        break;
                     default:
                         Console.WriteLine("Default : That is not a valid answer eco friend, enter 1-4");
                         Console.ReadLine();
                         break;
                 }
+                // displays an message depending on the users input
+         
+                }
             }          
         }
     }
-}
+

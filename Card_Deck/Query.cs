@@ -15,6 +15,7 @@ namespace Card_Deck
             List<GreenCards> greenCards = lcd.loadAllGreenCardsFromFile().ToList();
             return greenCards;
         }
+        
 
         public List<GreenCards> getSpecificGreenCard(int greenCardID)
         {
@@ -25,6 +26,23 @@ namespace Card_Deck
                                          where v.cardID == greenCardID                                   
                                          select v;
             return greenCardSearchResult.ToList();
+        }
+
+        public List<GreenCardResponses> getGreenCardResponses()
+        {
+            List<GreenCardResponses> greenCardResponses = lcd.loadAllGreenResponsesFromFile().ToList();
+            return greenCardResponses;
+        }
+
+        public List<GreenCardResponses> getSpecificGreenCardResponse(int greenCardID)
+        {
+            var greenCardResponseDeck = getGreenCardResponses();
+            // Linq query that returns a list based on user input from the getVists list
+            // user input includes start date, end date and location ID
+            var greenCardResponseSearchResult = from c in greenCardResponseDeck
+                                                where c.responseID == greenCardID
+                                                select c;
+            return greenCardResponseSearchResult.ToList();
         }
 
         public List<RedCards> getRedCards()
