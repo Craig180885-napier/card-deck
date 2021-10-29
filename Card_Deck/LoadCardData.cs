@@ -17,7 +17,7 @@ namespace Card_Deck
         {
             List<GreenCards> greenCards = new List<GreenCards>();
 
-            using (var reader = new StreamReader("C:\\Users\\Craig\\Documents\\csv\\GreenCards.csv")) // TODO - Move this to within the solution
+            using (var reader = new StreamReader(usersPath)) // TODO - Move this to within the solution
             {
                 reader.ReadLine();
 

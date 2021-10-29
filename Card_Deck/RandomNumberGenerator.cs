@@ -9,7 +9,8 @@ namespace Card_Deck
     class RandomNumberGenerator
     {
         private int _randomNumber;
-        
+
+        public RandomNumberGenerator() { }
 
         public RandomNumberGenerator(int range)
         {
